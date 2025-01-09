@@ -4,7 +4,7 @@
 try {
     $host = 'localhost';
     $port = '5432';
-    $dbname = 'teste_telecontrol';
+    $dbname = 'sistema_ordens';
     $user = 'postgres';
     $password = '123mudar';
 

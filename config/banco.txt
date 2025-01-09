@@ -1,0 +1,25 @@
+
+-- Tabela de Clientes
+CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(100) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
+);
+
+-- Tabela de Produtos
+CREATE TABLE produtos (
+    id SERIAL PRIMARY KEY,
+    descricao VARCHAR(100) NOT NULL,
+    status VARCHAR(30) NOT NULL
+);
+
+-- Tabela de Ordens de Compras
+CREATE TABLE ordens (
+    id SERIAL PRIMARY KEY,
+    nome_consumidor VARCHAR(100),
+    cpf_consumidor VARCHAR(11),
+    data_abertura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    produto_id INT NOT NULL,
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);
